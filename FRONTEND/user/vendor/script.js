@@ -5,15 +5,17 @@ const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("http://localhost:5501/vendor/login", {
+            const response = await fetch("/vendor/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json" 
+                },
                 body: JSON.stringify({ email, password })
             });
 
@@ -22,7 +24,6 @@ if (loginForm) {
 
             if (response.ok) {
                 alert("Login Successful ✅");
-                // Optional: redirect to vendor dashboard
                 // window.location.href = "vendor-dashboard.html";
             } else {
                 alert(data.message || "Login Failed ❌");
@@ -35,6 +36,7 @@ if (loginForm) {
     });
 }
 
+
 // ---------------------------
 // VENDOR REGISTRATION
 // ---------------------------
@@ -42,16 +44,18 @@ const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
     registerForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
         const username = document.getElementById("username").value;
         const email = document.getElementById("regEmail").value;
         const password = document.getElementById("regPassword").value;
 
         try {
-            const response = await fetch("http://localhost:5501/vendor/register", {
+            const response = await fetch("/vendor/register", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json" 
+                },
                 body: JSON.stringify({ username, email, password })
             });
 
@@ -60,7 +64,6 @@ if (registerForm) {
 
             if (response.ok) {
                 alert("Registration Successful ✅");
-                // Redirect to vendor login page after registration
                 window.location.href = "vendor-login.html";
             } else {
                 alert(data.message || "Registration Failed ❌");
