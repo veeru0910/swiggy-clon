@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vendor Register | Eat Express</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #8c8c8c, #b0b0b0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vendor-container {
+    width: 380px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.vendor-container h2 {
+    text-align: center;
+    color: #ff5200;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.vendor-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.vendor-container input:focus {
+    outline: none;
+    border-color: #ff5200;
+}
+
+.vendor-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5200;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.vendor-container button:hover {
+    background: #e64a00;
+}
+
+.vendor-container p {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.vendor-container a {
+    color: #ff5200;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.vendor-container a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="vendor-container">
+    <h2>Vendor Registration</h2>
+
+    <form id="registerForm">
+
+        <input type="text" id="username"
+               placeholder="Username" required>
+
+        <input type="email" id="regEmail"
+               placeholder="Email Address" required>
+
+        <input type="password" id="regPassword"
+               placeholder="Password" required>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p>
+        Already a vendor?
+        <a href="vendor-login.html">Login here</a>
+    </p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

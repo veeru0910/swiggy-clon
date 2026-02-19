@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body style with background image */
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("burger.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Auth box style */
+        .auth-box {
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent to see the background */
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 360px;
+            text-align: center;
+        }
+
+        /* Heading */
+        .auth-box h2 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        /* Inputs */
+        .auth-box input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .auth-box input:focus {
+            border-color: #ff416c;
+            box-shadow: 0 0 5px rgba(255,65,108,0.5);
+        }
+
+        /* Button */
+        .auth-box button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            background: #ff416c;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .auth-box button:hover {
+            background: #ff4b2b;
+        }
+
+        /* Paragraph and link */
+        .auth-box p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .auth-box p a {
+            color: #ff416c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-box p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-box">
+    <h2>Sign Up</h2>
+
+    <form action="login.html" method="POST">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account?
+        <a href="login.html">Sign In</a>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+const mongoose = require('mongoose');
+
+const VendorSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  // One vendor can own multiple firms
+  firms: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Firm'
+  }]
+});
+
+const Vendor = mongoose.model('Vendor', VendorSchema);
+module.exports = Vendor;

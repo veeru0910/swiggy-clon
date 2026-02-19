@@ -1,0 +1,10 @@
+.auth a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin: 0 5px;
+}
+
+.auth a:hover {
+    color: orange;
+}

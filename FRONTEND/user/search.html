@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+        .item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Search Results</h2>
+<div id="results"></div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get('query').toLowerCase();
+
+const items = [
+    "Meals",
+    "Biryani",
+    "Milkshakes",
+    "Starters",
+    "Pizza"
+];
+
+const resultsDiv = document.getElementById("results");
+
+let found = false;
+
+items.forEach(item => {
+    if (item.toLowerCase().includes(query)) {
+        resultsDiv.innerHTML += `<div class="item">${item}</div>`;
+        found = true;
+    }
+});
+
+if (!found) {
+    resultsDiv.innerHTML = "<p>No items found</p>";
+}
+</script>
+
+</body>
+</html>
