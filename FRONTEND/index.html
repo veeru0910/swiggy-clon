@@ -5,113 +5,113 @@
 <title>Andhra Cravings</title>
 
 <style>
+/* ... your existing CSS unchanged ... */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
 }
 
-
 body{
-background:#8c8c8c;
+    background:#8c8c8c;
 }
 
 .header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
 }
 
 .logo{
-font-size:24px;
-font-weight:bold;
-color:#ff5200;
+    font-size:24px;
+    font-weight:bold;
+    color:#ff5200;
 }
 
 .search{
-width:320px;
-padding:8px 12px;
+    width:320px;
+    padding:8px 12px;
 }
 
 .auth a{
-text-decoration:none;
-font-weight:bold;
-color:black;
-margin:0 5px;
+    text-decoration:none;
+    font-weight:bold;
+    color:black;
+    margin:0 5px;
 }
 
 /* CATEGORY SECTION */
 .category-container{
-background:white;
-margin:25px;
-padding:20px;
-border-radius:12px;
+    background:white;
+    margin:25px;
+    padding:20px;
+    border-radius:12px;
 }
 
 .category-slider{
-display:flex;
-gap:40px;
+    display:flex;
+    gap:40px;
 }
 
 .category{
-text-align:center;
-cursor:pointer;
+    text-align:center;
+    cursor:pointer;
 }
 
 .category img{
-width:90px;
-height:90px;
-border-radius:50%;
-object-fit:cover;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
 .category p{
-margin-top:10px;
-font-weight:bold;
+    margin-top:10px;
+    font-weight:bold;
 }
 
 /* RESTAURANTS */
 .section{
-padding:30px;
+    padding:30px;
 }
 
 .section h2{
-color:white;
-margin-bottom:20px;
+    color:white;
+    margin-bottom:20px;
 }
 
 .cards{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .card{
-background:white;
-width:250px;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.4);
-text-align:center;
-cursor:pointer;
-transition:0.3s;
+    background:white;
+    width:250px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
 
 .card img{
-width:100%;
-height:180px;
-object-fit:cover;
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
 .card h3{
-padding:10px;
+    padding:10px;
 }
 </style>
 </head>
@@ -125,10 +125,10 @@ padding:10px;
 id="searchInput" onkeyup="searchItems()">
 
 <div class="auth">
-<a href="login.html">Login</a> /
-<a href="signup.html">Signup</a> |
-<a href="vendor/vendor-login.html">Vendor Login</a> /
-<a href="vendor/vendor-register.html">Become a Vendor</a>
+<a href="/user/login.html">Login</a> /
+<a href="/user/signup.html">Signup</a> |
+<a href="/user/vendor/vendor-login.html">Vendor Login</a> /
+<a href="/user/vendor/vendor-register.html">Become a Vendor</a>
 </div>
 </header>
 
@@ -137,32 +137,32 @@ id="searchInput" onkeyup="searchItems()">
 <div class="category-slider">
 
 <div class="category">
-<img src="bonda.webp">
+<img src="/user/bonda.webp" alt="Bonda">
 <p>Bonda</p>
 </div>
 
 <div class="category">
-<img src="dosa1.jpg">
+<img src="/user/dosa1.jpg" alt="Dosa">
 <p>Dosa</p>
 </div>
 
 <div class="category">
-<img src="idli.jpg">
+<img src="/user/idli.jpg" alt="Idli">
 <p>Idli</p>
 </div>
 
 <div class="category">
-<img src="juice.jpg">
+<img src="/user/juice.jpg" alt="Juice">
 <p>Juice</p>
 </div>
 
 <div class="category">
-<img src="poha.jpg">
+<img src="/user/poha.jpg" alt="Poha">
 <p>Poha</p>
 </div>
 
 <div class="category">
-<img src="desserts.jpg">
+<img src="/user/desserts.jpg" alt="Desserts">
 <p>Desserts</p>
 </div>
 
@@ -175,23 +175,23 @@ id="searchInput" onkeyup="searchItems()">
 
 <div class="cards">
 <div class="card">
-<img src="MELAS.jpg">
+<img src="/user/MELAS.jpg" alt="MELAS">
 </div>
 
 <div class="card">
-<img src="BIRYANI.jpg">
+<img src="/user/BIRYANI.jpg" alt="BIRYANI">
 </div>
 
 <div class="card">
-<img src="MILKSHAKES.jpg">
+<img src="/user/MILKSHAKES.jpg" alt="MILKSHAKES">
 </div>
 
 <div class="card">
-<img src="straters.jpg">
+<img src="/user/straters.jpg" alt="Starters">
 </div>
 
 <div class="card">
-<img src="pizza.jpg">
+<img src="/user/pizza.jpg" alt="Pizza">
 </div>
 </div>
 </section>
@@ -204,31 +204,31 @@ id="searchInput" onkeyup="searchItems()">
 
 <div class="card" data-name="andhara meals"
 onclick="openRestaurant('Andhara Meals')">
-<img src="andhara meals.jpg">
+<img src="/user/andhara meals.jpg" alt="Andhara Meals">
 <h3>Andhara Meals</h3>
 </div>
 
 <div class="card" data-name="bahai hotel"
 onclick="openRestaurant('Bahai Hotel')">
-<img src="biryani1.jpg">
+<img src="/user/biryani1.jpg" alt="Bahai Hotel">
 <h3>Bahai Hotel</h3>
 </div>
 
 <div class="card" data-name="sri sai tiffin center"
 onclick="openRestaurant('Sri Sai Tiffin Center')">
-<img src="tiffin.jpg">
+<img src="/user/tiffin.jpg" alt="Sri Sai Tiffin Center">
 <h3>Sri Sai Tiffin Center</h3>
 </div>
 
 <div class="card" data-name="hungry man restaurant"
 onclick="openRestaurant('Hungry Man Restaurant')">
-<img src="hungry.jpg">
+<img src="/user/hungry.jpg" alt="Hungry Man Restaurant">
 <h3>Hungry Man Restaurant</h3>
 </div>
 
 <div class="card" data-name="royal biryani house"
 onclick="openRestaurant('Royal Biryani House')">
-<img src="royal biryani.jpg">
+<img src="/user/royal biryani.jpg" alt="Royal Biryani House">
 <h3>Royal Biryani House</h3>
 </div>
 
@@ -236,8 +236,7 @@ onclick="openRestaurant('Royal Biryani House')">
 </section>
 
 <script>
-
-// FIXED SEARCH FUNCTION
+// SEARCH FUNCTION
 function searchItems(){
 let input = document.getElementById("searchInput").value.toLowerCase();
 let cards = document.querySelectorAll(".card[data-name]");
@@ -256,9 +255,8 @@ card.style.display = "none";
 // OPEN RESTAURANT PAGE
 function openRestaurant(name){
 localStorage.setItem("resName", name);
-window.location.href = "restaurant.html";
+window.location.href = "/user/restaurant.html";
 }
-
 </script>
 
 </body>
