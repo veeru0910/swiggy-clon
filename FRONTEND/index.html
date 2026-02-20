@@ -12,6 +12,7 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
+
 body{
 background:#8c8c8c;
 }
@@ -42,6 +43,7 @@ color:black;
 margin:0 5px;
 }
 
+/* CATEGORY SECTION */
 .category-container{
 background:white;
 margin:25px;
@@ -71,6 +73,7 @@ margin-top:10px;
 font-weight:bold;
 }
 
+/* RESTAURANTS */
 .section{
 padding:30px;
 }
@@ -122,10 +125,10 @@ padding:10px;
 id="searchInput" onkeyup="searchItems()">
 
 <div class="auth">
-<a href="user/login.html">Login</a> /
-<a href="user/signup.html">Signup</a> |
-<a href="user/vendor/vendor-login.html">Vendor Login</a> /
-<a href="user/vendor/vendor-register.html">Become a Vendor</a>
+<a href="login.html">Login</a> /
+<a href="signup.html">Signup</a> |
+<a href="vendor/vendor-login.html">Vendor Login</a> /
+<a href="vendor/vendor-register.html">Become a Vendor</a>
 </div>
 </header>
 
@@ -134,32 +137,32 @@ id="searchInput" onkeyup="searchItems()">
 <div class="category-slider">
 
 <div class="category">
-<img src="user/bonda.webp">
+<img src="bonda.webp">
 <p>Bonda</p>
 </div>
 
 <div class="category">
-<img src="user/dosa1.jpg">
+<img src="dosa1.jpg">
 <p>Dosa</p>
 </div>
 
 <div class="category">
-<img src="user/idli.jpg">
+<img src="idli.jpg">
 <p>Idli</p>
 </div>
 
 <div class="category">
-<img src="user/juice.jpg">
+<img src="juice.jpg">
 <p>Juice</p>
 </div>
 
 <div class="category">
-<img src="user/poha.jpg">
+<img src="poha.jpg">
 <p>Poha</p>
 </div>
 
 <div class="category">
-<img src="user/desserts.jpg">
+<img src="desserts.jpg">
 <p>Desserts</p>
 </div>
 
@@ -171,11 +174,25 @@ id="searchInput" onkeyup="searchItems()">
 <h2>Best food items near KAKINADA</h2>
 
 <div class="cards">
-<div class="card"><img src="user/MELAS.jpg"></div>
-<div class="card"><img src="user/BIRYANI.jpg"></div>
-<div class="card"><img src="user/MILKSHAKES.jpg"></div>
-<div class="card"><img src="user/straters.jpg"></div>
-<div class="card"><img src="user/pizza.jpg"></div>
+<div class="card">
+<img src="MELAS.jpg">
+</div>
+
+<div class="card">
+<img src="BIRYANI.jpg">
+</div>
+
+<div class="card">
+<img src="MILKSHAKES.jpg">
+</div>
+
+<div class="card">
+<img src="straters.jpg">
+</div>
+
+<div class="card">
+<img src="pizza.jpg">
+</div>
 </div>
 </section>
 
@@ -187,31 +204,31 @@ id="searchInput" onkeyup="searchItems()">
 
 <div class="card" data-name="andhara meals"
 onclick="openRestaurant('Andhara Meals')">
-<img src="user/andhara meals.jpg">
+<img src="andhara meals.jpg">
 <h3>Andhara Meals</h3>
 </div>
 
 <div class="card" data-name="bahai hotel"
 onclick="openRestaurant('Bahai Hotel')">
-<img src="user/biryani1.jpg">
+<img src="biryani1.jpg">
 <h3>Bahai Hotel</h3>
 </div>
 
 <div class="card" data-name="sri sai tiffin center"
 onclick="openRestaurant('Sri Sai Tiffin Center')">
-<img src="user/tiffin.jpg">
+<img src="tiffin.jpg">
 <h3>Sri Sai Tiffin Center</h3>
 </div>
 
 <div class="card" data-name="hungry man restaurant"
 onclick="openRestaurant('Hungry Man Restaurant')">
-<img src="user/hungry.jpg">
+<img src="hungry.jpg">
 <h3>Hungry Man Restaurant</h3>
 </div>
 
 <div class="card" data-name="royal biryani house"
 onclick="openRestaurant('Royal Biryani House')">
-<img src="user/royal biryani.jpg">
+<img src="royal biryani.jpg">
 <h3>Royal Biryani House</h3>
 </div>
 
@@ -219,6 +236,8 @@ onclick="openRestaurant('Royal Biryani House')">
 </section>
 
 <script>
+
+// FIXED SEARCH FUNCTION
 function searchItems(){
 let input = document.getElementById("searchInput").value.toLowerCase();
 let cards = document.querySelectorAll(".card[data-name]");
@@ -234,10 +253,12 @@ card.style.display = "none";
 });
 }
 
+// OPEN RESTAURANT PAGE
 function openRestaurant(name){
 localStorage.setItem("resName", name);
-window.location.href = "user/restaurant.html";
+window.location.href = "restaurant.html";
 }
+
 </script>
 
 </body>
