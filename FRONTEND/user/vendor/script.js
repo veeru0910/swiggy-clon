@@ -23,7 +23,8 @@ if (loginForm) {
             if (response.ok) {
                 alert("Login Successful ✅");
                 // Optional: redirect to vendor dashboard
-                // window.location.href = "vendor-dashboard.html";
+                window.location.href = "../../index.html";
+
             } else {
                 alert(data.message || "Login Failed ❌");
             }
