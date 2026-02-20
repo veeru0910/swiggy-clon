@@ -1,66 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Restaurant Menu</title>
 
 <style>
-body{
-  font-family:Arial;
-  margin:0;
-  background:#1E1E1E;
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #1E1E1E;
 }
 
-.header{
-  background:orange;
-  padding:15px;
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-  color:blueviolet;
+.header {
+    background: orange;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: blueviolet;
 }
 
-.menu-container{
-  padding:20px;
+.menu-container {
+    padding: 20px;
 }
 
-.menu-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:whitesmoke;
-  padding:15px;
-  margin-bottom:15px;
-  border-radius:8px;
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: whitesmoke;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
 }
 
-.item-details h3{
-  margin:0;
+.item-details h3 {
+    margin: 0;
 }
 
-.item-details p{
-  margin:5px 0;
+.item-details p {
+    margin: 5px 0;
 }
 
-.item-image img{
-  width:100px;
-  height:80px;
-  border-radius:8px;
-  object-fit:cover;
+.item-image img {
+    width: 100px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-button{
-  margin-top:5px;
-  padding:6px 15px;
-  border:none;
-  background:green;
-  color:white;
-  border-radius:5px;
-  cursor:pointer;
+button {
+    margin-top: 5px;
+    padding: 6px 15px;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.back{
-  margin:20px;
-  text-align:center;
+.back {
+    margin: 20px;
+    text-align: center;
 }
 </style>
 </head>
@@ -68,83 +69,92 @@ button{
 <body>
 
 <div class="header" id="restaurantName"></div>
+
 <div class="menu-container" id="menuContainer"></div>
 
 <div class="back">
-<button onclick="goBack()">Back</button>
+    <button onclick="goBack()">Back</button>
 </div>
 
 <script>
-let restaurant = localStorage.getItem("resName");
+const restaurant = localStorage.getItem("resName");
 document.getElementById("restaurantName").innerText = restaurant;
 
-let menu = document.getElementById("menuContainer");
+const menu = document.getElementById("menuContainer");
 
-function createItem(name,price,image){
-  return `
-  <div class="menu-item">
-    <div class="item-details">
-      <h3>${name}</h3>
-      <p>${price}</p>
+const menus = {
+    "Andhara Meals": [
+        ["Plain Rice with Sambar", "₹99", "plain rice with sambar.jpg"],
+        ["Ghee Rice with Dal", "₹129", "dal rice.jpg"],
+        ["Rice with Chicken Curry", "₹199", "chicken curry.jpg"],
+        ["Rice with Mutton Curry", "₹299", "mutton curry.jpg"],
+        ["Full Meals", "₹299", "mutton curry.jpg"],
+        ["Deluxe Meals", "₹299", "mutton curry.jpg"],
+        ["Mini Meals", "₹299", "mutton curry.jpg"]
+    ],
+    "Bahai Hotel": [
+        ["Chicken Biryani", "₹180", "biryani1.jpg"],
+        ["Mutton Biryani", "₹250", "mutton biryani.jpg"],
+        ["Egg Biryani", "₹140", "egg biryani.jpg"],
+        ["Veg Biryani", "₹120", "veg biryani.jpg"],
+        ["Prawns Biryani", "₹299", "veg biryani.jpg"],
+        ["Fish Biryani", "₹199", "veg biryani.jpg"]
+    ],
+    "Sri Sai Tiffin Center": [
+        ["Idli", "₹30", "idli.jpg"],
+        ["Dosa", "₹40", "dosa1.jpg"],
+        ["Poori", "₹50", "poori.jpg"],
+        ["Upma", "₹35", "upma.jpg"],
+        ["Egg Dosa", "₹50", "upma.jpg"],
+        ["Masala Dosa", "₹49", "upma.jpg"]
+    ],
+    "Hungry Man Restaurant": [
+        ["Full Meals", "₹150", "full meals.jpg"],
+        ["Chicken Fry", "₹180", "chicken fry.jpg"],
+        ["Paneer Curry", "₹160", "panner curry.jpg"],
+        ["Fish Fry", "₹200", "fish fry.jpg"],
+        ["Family Pack Chicken Biryani", "₹399", "fish fry.jpg"],
+        ["Chicken Boneless Biryani", "₹299", "fish fry.jpg"]
+    ],
+    "Royal Biryani House": [
+        ["Hyderabadi Biryani", "₹210", "Hyderabadi Biryan.jpg"],
+        ["Special Chicken Biryani", "₹230", "special chicken biryani.jpg"],
+        ["Mutton Dum Biryani", "₹280", "mutton dum biryani.jpg"],
+        ["Double Masala Biryani", "₹260", "double masala biryani.jpg"],
+        ["Chicken 65", "₹199", "double masala biryani.jpg"],
+        ["Royal Prawns Dum Biryani", "₹299", "double masala biryani.jpg"]
+    ]
+};
+
+// Render menu items dynamically
+if (menus[restaurant]) {
+    menus[restaurant].forEach(item => {
+        menu.innerHTML += createItem(item[0], item[1], item[2]);
+    });
+}
+
+function createItem(name, price, image) {
+    return `
+    <div class="menu-item">
+        <div class="item-details">
+            <h3>${name}</h3>
+            <p>${price}</p>
+        </div>
+        <div class="item-image">
+            <img src="${image}" alt="${name}">
+            <br>
+            <button onclick="addItem('${name}')">ADD</button>
+        </div>
     </div>
-    <div class="item-image">
-      <img src="user/${image}">
-      <br>
-      <button onclick="addItem('${name}')">ADD</button>
-    </div>
-  </div>
-  `;
+    `;
 }
 
-if(restaurant==="Andhara Meals"){
-  menu.innerHTML = `
-  ${createItem("Plain Rice with Sambar","₹99","plain rice with sambar.jpg")}
-  ${createItem("Ghee Rice with Dal","₹129","dal rice.jpg")}
-  ${createItem("Rice with Chicken Curry","₹199","chicken curry.jpg")}
-  ${createItem("Rice with Mutton Curry","₹299","mutton curry.jpg")}
-  ${createItem("Full meals","₹299","full meals.jpg")}
-  ${createItem("Deluxe Meals","₹299","full meals.jpg")}
-  ${createItem("Mini Meals","₹299","full meals.jpg")}
-  `;
-}
-else if(restaurant==="Bahai Hotel"){
-  menu.innerHTML = `
-  ${createItem("Chicken Biryani","₹180","biryani1.jpg")}
-  ${createItem("Mutton Biryani","₹250","mutton biryani.jpg")}
-  ${createItem("Egg Biryani","₹140","egg biryani.jpg")}
-  ${createItem("Veg Biryani","₹120","veg biryani.jpg")}
-  `;
-}
-else if(restaurant==="Sri Sai Tiffin Center"){
-  menu.innerHTML = `
-  ${createItem("Idli","₹30","idli.jpg")}
-  ${createItem("Dosa","₹40","dosa1.jpg")}
-  ${createItem("Poori","₹50","poori.jpg")}
-  ${createItem("Upma","₹35","upma.jpg")}
-  `;
-}
-else if(restaurant==="Hungry Man Restaurant"){
-  menu.innerHTML = `
-  ${createItem("Full Meals","₹150","full meals.jpg")}
-  ${createItem("Chicken Fry","₹180","chicken fry.jpg")}
-  ${createItem("Paneer Curry","₹160","panner curry.jpg")}
-  ${createItem("Fish Fry","₹200","fish fry.jpg")}
-  `;
-}
-else if(restaurant==="Royal Biryani House"){
-  menu.innerHTML = `
-  ${createItem("Hyderabadi Biryani","₹210","Hyderabadi Biryan.jpg")}
-  ${createItem("Special Chicken Biryani","₹230","special chicken biryani.jpg")}
-  ${createItem("Mutton Dum Biryani","₹280","mutton dum biryani.jpg")}
-  `;
+function addItem(item) {
+    alert(item + " added to cart!");
 }
 
-function addItem(item){
-  alert(item + " added to cart!");
-}
-
-function goBack(){
-  window.location.href="index.html";
+function goBack() {
+    window.location.href = "index.html";
 }
 </script>
 
